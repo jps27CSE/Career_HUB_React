@@ -1,14 +1,16 @@
+import { Link, NavLink } from "react-router-dom";
+
 const Header = () => {
   const HeadingSection = (
     <>
       <li>
-        <a>Statistics</a>
+        <NavLink to="/stats">Statistics</NavLink>
       </li>
       <li>
-        <a>Applied Jobs</a>
+        <NavLink to="/appliedJobs">Applied Jobs</NavLink>
       </li>
       <li>
-        <a>Blog</a>
+        <NavLink to="/blogs">Blog</NavLink>
       </li>
     </>
   );
@@ -40,7 +42,9 @@ const Header = () => {
             {HeadingSection}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">Career Hub</a>
+        <a className="btn btn-ghost normal-case text-xl">
+          <Link to="/">Career Hub</Link>
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{HeadingSection}</ul>

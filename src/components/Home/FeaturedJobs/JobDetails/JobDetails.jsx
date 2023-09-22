@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { saveJobApplication } from "../../../../utils/LocalStorage";
 
 const JobDetails = () => {
   const data = useLoaderData();
@@ -14,6 +15,10 @@ const JobDetails = () => {
     educational_requirements,
     experiences,
   } = job;
+
+  const handleApply = () => {
+    saveJobApplication(idInt);
+  };
 
   return (
     <div className="ml-2">
@@ -57,7 +62,9 @@ const JobDetails = () => {
             </div>
           </div>
           <div className="flex justify-center mt-2">
-            <button className="btn btn-primary "> Apply Now</button>
+            <button onClick={handleApply} className="btn btn-primary ">
+              Apply Now
+            </button>
           </div>
         </div>
       </div>
