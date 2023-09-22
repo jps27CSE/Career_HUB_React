@@ -7,7 +7,7 @@ const Root = () => {
     <div className="max-w-6xl mx-auto">
       <Header />
       <Outlet />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
