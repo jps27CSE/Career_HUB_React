@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 const AppliedJob = ({ job }) => {
   console.log(job);
   const { id, logo, location, salary, job_type, job_title, remote_or_onsite } =
@@ -28,7 +29,9 @@ const AppliedJob = ({ job }) => {
           </div>
         </div>
         <div className="p-5 my-auto">
-          <button className="btn btn-primary">View Details</button>
+          <Link to={`/job/${id}`}>
+            <button className="btn btn-primary">View Details</button>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 const getStoreData = () => {
   const storedJobApplication = localStorage.getItem("job-applications");
   if (storedJobApplication) {
@@ -17,6 +18,9 @@ const saveJobApplication = (id) => {
       "job-applications",
       JSON.stringify(storedJobApplications)
     );
+    toast.success("Added Successfully");
+  } else {
+    toast.error("Already Added");
   }
 };
 
