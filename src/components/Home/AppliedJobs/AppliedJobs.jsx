@@ -21,6 +21,12 @@ const AppliedJobs = () => {
     }
   };
 
+  const handleClear = () => {
+    localStorage.clear();
+    setAppJobs([]);
+    setDisplayJobs([]);
+  };
+
   useEffect(() => {
     fetch("jobs.json")
       .then((res) => res.json())
@@ -56,6 +62,14 @@ const AppliedJobs = () => {
             </li>
           </ul>
         </details>
+        <div>
+          <button
+            onClick={handleClear}
+            className="btn btn-primary my-auto mt-1 ml-2"
+          >
+            Clear
+          </button>
+        </div>
       </div>
       <div className="flex flex-col">
         {displayJobs.map((job) => (
